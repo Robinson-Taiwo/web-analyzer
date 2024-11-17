@@ -1,9 +1,7 @@
-"use client"
-import { Network, Search, Sparkles, Users,  } from "lucide-react"
+import { Network, Search, Sparkles, Users,  Check, Download, MessageSquare } from "lucide-react"
 import Link from "next/link"
-// import Image from "next/image"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import ComparisonSection from '../components/Comparison-section';
 
 export default function LandingPage() {
   return (
@@ -18,7 +16,7 @@ export default function LandingPage() {
             <Link className="text-sm font-medium text-muted-foreground transition hover:text-rose-600" href="#">
               Features
             </Link>
-            <Link className="text-sm font-medium text-muted-foreground transition hover:text-rose-600" href="examples">
+            <Link className="text-sm font-medium text-muted-foreground transition hover:text-rose-600" href="#">
               Examples
             </Link>
             <Link className="text-sm font-medium text-muted-foreground transition hover:text-rose-600" href="#">
@@ -97,8 +95,99 @@ export default function LandingPage() {
         </div>
         
         {/* New Comparison Section */}
-    
-        <ComparisonSection/>
+        <section className="py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-rose-950 mb-12">See the Difference</h2>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="space-y-6">
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src="/placeholder.svg?height=450&width=800"
+                    alt="Original website design"
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-opacity duration-300 hover:opacity-75"
+                  />
+                  <div className="absolute top-4 left-4 bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Before
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-6 shadow-lg">
+                  <h3 className="text-lg font-semibold text-rose-950 mb-4">Identified Issues</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="mr-2 mt-1 text-rose-600">•</span>
+                      Low color contrast affecting readability
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2 mt-1 text-rose-600">•</span>
+                      Cluttered layout with poor use of whitespace
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2 mt-1 text-rose-600">•</span>
+                      Non-responsive design, poor mobile experience
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2 mt-1 text-rose-600">•</span>
+                      Outdated typography choices
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src="/placeholder.svg?height=450&width=800"
+                    alt="Redesigned website"
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-opacity duration-300 hover:opacity-75"
+                  />
+                  <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    After
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-6 shadow-lg">
+                  <h3 className="text-lg font-semibold text-rose-950 mb-4">Improvements Made</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <Check className="mr-2 h-5 w-5 text-green-500 flex-shrink-0" />
+                      Enhanced color scheme for better contrast and readability
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="mr-2 h-5 w-5 text-green-500 flex-shrink-0" />
+                      Streamlined layout with improved use of whitespace
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="mr-2 h-5 w-5 text-green-500 flex-shrink-0" />
+                      Fully responsive design for optimal mobile experience
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="mr-2 h-5 w-5 text-green-500 flex-shrink-0" />
+                      Modern typography for enhanced visual appeal
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="mt-12 text-center space-y-6">
+              <h3 className="text-2xl font-semibold text-rose-950">Ready to Transform Your Website?</h3>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button className="bg-rose-600 text-white hover:bg-rose-700">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Redesign
+                </Button>
+                <Button variant="outline" className="border-rose-600 text-rose-600 hover:bg-rose-50">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Speak to Our Experts
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Get your redesign now or contact us for custom development and advanced features
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   )
